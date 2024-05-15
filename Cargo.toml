@@ -1,0 +1,13 @@
+[package]
+name = "local-ci-cargo-audit"
+version = "1.0.0"
+edition = "2021"
+authors = ["Mike Caines"]
+repository = "https://github.com/mikecaines/local-ci-cargo-audit"
+
+[dependencies]
+clap = { version = "3.2.17", features = ["cargo"] }
+tokio = { version = "1.20.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "process", "sync"] }
+toml = { version = "0.8.13" }
+futures-util = { version = "0.3.21" }
+serde = { version = "1.0.143", features = ["derive"] }
