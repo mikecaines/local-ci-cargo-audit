@@ -49,6 +49,8 @@ async fn main() -> Result<ExitCode, BoxError> {
 				})
 				.collect::<String>();
 
+			// cargo-audit does not output a success message
+			// so empty here, indicates success
 			if text.is_empty() {
 				text.push_str("\tOk\n")
 			} else {
