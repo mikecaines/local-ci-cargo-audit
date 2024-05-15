@@ -1,4 +1,5 @@
-use crate::args::{get_args, AppArgs};
+use crate::args::AppArgs;
+use clap::Parser;
 use futures_util::{stream, StreamExt, TryStreamExt};
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -18,7 +19,7 @@ async fn main() -> Result<ExitCode, BoxError> {
 	let AppArgs {
 		config_path,
 		output_path,
-	} = get_args()?;
+	} = AppArgs::parse();
 
 	let config: Config = toml::from_str(fs::read_to_string(config_path).await?.as_str())?;
 

@@ -5,8 +5,13 @@ edition = "2021"
 authors = ["Mike Caines"]
 repository = "https://github.com/mikecaines/local-ci-cargo-audit"
 
+description = """
+A simple tool to run `cargo audit` for multiple projects,\
+and create/delete a report file depending on whether any crate has a vulnerability or not.
+"""
+
 [dependencies]
-clap = { version = "3.2.17", features = ["cargo"] }
+clap = { version = "4.5.4", features = ["derive"] }
 tokio = { version = "1.20.1", features = ["macros", "rt-multi-thread", "fs", "io-util", "process", "sync"] }
 toml = { version = "0.8.13" }
 futures-util = { version = "0.3.21" }
