@@ -1,12 +1,12 @@
 # local-ci-cargo-audit
 
 A simple tool to run `cargo audit` for multiple projects, and create/delete a report file depending on whether
-everything is up-to-date or not.
+any crate has a vulnerability or not.
 
 This can be handy to use on a dev machine, to notify yourself if any of your projects have vulnerable dependencies.
 
 You can run it periodically via user-level CRON, and the report file will be created/deleted to indicate whether
-everything is up-to-date or not. Similar to how `/run/reboot-required` behaves.
+any crate has a vulnerability or not. Similar to how `/run/reboot-required` behaves.
 
 ## Usage
 
