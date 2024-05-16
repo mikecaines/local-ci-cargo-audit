@@ -16,3 +16,4 @@ tokio = { version = "1.20.1", features = ["macros", "rt-multi-thread", "fs", "io
 toml = { version = "0.8.13" }
 futures-util = { version = "0.3.21" }
 serde = { version = "1.0.143", features = ["derive"] }
+strip-ansi-escapes = "0.2.0"

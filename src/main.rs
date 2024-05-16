@@ -6,6 +6,7 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::path::PathBuf;
 use std::process::ExitCode;
+use strip_ansi_escapes::strip;
 use tokio::io::AsyncWriteExt;
 use tokio::{fs, process, sync};
 
@@ -108,8 +109,8 @@ async fn main() -> Result<ExitCode, BoxError> {
 							source_label,
 							format!(
 								"{} {}",
-								String::from_utf8(output.stdout)?,
-								String::from_utf8(output.stderr)?
+								String::from_utf8(strip(&output.stdout))?,
+								String::from_utf8(strip(output.stderr))?
 							)
 							.trim()
 							.to_string(),
